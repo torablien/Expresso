@@ -1,31 +1,17 @@
-== README
-
-This README would normally document whatever steps are necessary to get the
-application up and running.
+== EXPRESSO
 
 Here is the Heroku! 
-expresso-studio.herokuapp.com
+[expresso-studio.herokuapp.com](http://expresso-studio.herokuapp.com/)
 
-Things you may want to cover:
+Running on Ruby 2.2.2p95 via Cloud9 IDE
 
-* Ruby version
+Pushing from Cloud9 to Github
+<tt>git add .<tt>
+<tt>git commit -m "description here"<tt>
 
-* System dependencies
+Pulling from Github to Cloud9
+<tt>git pull git@github.com:torablien/Expresso.git<tt>
 
-* Configuration
+Pushing from Cloud9 to Heroku
+<tt>git push heroku master<tt>
 
-* Database creation
-
-* Database initialization
-
-* How to run the test suite
-
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
-
-
-Please feel free to use a different markup language if you do not plan to run
-<tt>rake doc:app</tt>.
