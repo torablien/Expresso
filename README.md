@@ -1,18 +1,16 @@
+== EXPRESSO
 
-     ,-----.,--.                  ,--. ,---.   ,--.,------.  ,------.
-    '  .--./|  | ,---. ,--.,--. ,-|  || o   \  |  ||  .-.  \ |  .---'
-    |  |    |  || .-. ||  ||  |' .-. |`..'  |  |  ||  |  \  :|  `--, 
-    '  '--'\|  |' '-' ''  ''  '\ `-' | .'  /   |  ||  '--'  /|  `---.
-     `-----'`--' `---'  `----'  `---'  `--'    `--'`-------' `------'
-    ----------------------------------------------------------------- 
+Here is the Heroku! [expresso-studio.herokuapp.com](expresso-studio.herokuapp.com/)
 
+Running on Ruby 2.2.2p95 via Cloud9 IDE
 
-Hi there! Welcome to Cloud9 IDE!
+Pushing from Cloud9 to Github 
+<tt>git add .<tt> 
+<tt>git commit -m “description here”<tt> 
+<tt>git push origin master<tt>
 
-To get you started, create some files, play with the terminal,
-or visit http://docs.c9.io for our documentation.
-If you want, you can also go watch some training videos at
-http://www.youtube.com/user/c9ide.
+Pulling from Github to Cloud9 
+<tt>git pull git@github.com:torablien/Expresso.git<tt>
 
-Happy coding!
-The Cloud9 IDE team
+Pushing from Cloud9 to Heroku 
+<tt>git push heroku master<tt>
