@@ -4,7 +4,7 @@ Here is the Heroku! [expresso-studio.herokuapp.com](expresso-studio.herokuapp.co
 
 Running on Ruby 2.2.2p95 via Cloud9 IDE
 
-Pushing from Cloud9 to Github 
+Pushing from Cloud9 to Github  
 <tt>git add .</tt>  
 <tt>git commit -m “description here”</tt>   
 <tt>git push origin master</tt>  
