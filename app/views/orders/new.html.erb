@@ -6,12 +6,13 @@
 
 <div class="create">
   <div class="container">
-    
     <%= form_for(@order) do |f| %>
     	<div class="field">
-            <%= f.label :order %><br>
+            <%= f.label :order, "Create a New Order" %>
+            Please enter your order information below:
             <%= f.text_area :content %>
     	</div>
+    	<br>
     	<div class="actions">
     	  <%= f.submit "Create" %>
     	</div>
