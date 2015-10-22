@@ -1,0 +1,18 @@
+<div class="header">
+  <div class="container">
+    <h1>Orders</h1>
+  </div>
+</div>
+
+<div class="orders">
+  <div class="container">
+  
+    <% @orders.each do |order| %>
+        <div class="order">
+            <p class="content"><%= order.content %></p>
+            <p class="time"><%= order.created_at %></p>
+        </div>
+    <% end %>
+    <%= link_to 'New Order', "orders/new" %>
+  </div>
+</div>
