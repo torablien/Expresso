@@ -7,6 +7,13 @@
 <div class="orders">
   <div class="container">
       <table class="order" style="width:100%">
+        <thead>
+										<tr>
+											<th>ID</th>
+											<th>Description</th>
+											<th>Date Created</th>
+										</tr>
+									</thead>
         <% @orders.each do |order| %>
               <tr>
                 <td class="orderid"><%= order.id %></td>
