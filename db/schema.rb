@@ -14,6 +14,7 @@
 ActiveRecord::Schema.define(version: 20151022054641) do
 
   create_table "orders", force: :cascade do |t|
+    t.text     "content"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end
