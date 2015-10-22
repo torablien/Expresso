@@ -6,13 +6,15 @@
 
 <div class="orders">
   <div class="container">
-  
-    <% @orders.each do |order| %>
-        <div class="order">
-            <p class="content"><%= order.content %></p>
-            <p class="time"><%= order.created_at %></p>
-        </div>
-    <% end %>
+      <table class="order" style="width:100%">
+        <% @orders.each do |order| %>
+              <tr>
+                <td class="orderid"><%= order.id %></td>
+                <td class="content"><%= order.content %></td>
+                <td class="time"><%= order.created_at %></td>
+              </tr>
+        <% end %>
+      </table>
     <%= link_to 'New Order', "orders/new" %>
   </div>
 </div>
