@@ -1,0 +1,45 @@
+<div class="header">
+  <header id="header">
+				<h1><a href="/">Expresso</a></h1>
+				<a href="#nav">Menu</a>
+			</header>
+
+			<nav id="nav">
+				<ul class="links">
+					<li><a href="index.html">Home</a></li>
+					<li><a href="#">Login</a></li>
+					<li><a href="#">Cart</a></li>
+					<li><a href="#">About</a></li>
+				</ul>
+			</nav>
+			
+  <div class="container">
+    <br/>
+    <h1>Orders</h1>
+  </div>
+</div>
+
+<div class="orders">
+  <div class="container">
+      <table class="order" style="width:100%">
+        <thead>
+										<tr>
+										    <th>Accept</th>
+											<th>ID</th>
+											<th>Description</th>
+											<th>Date Created</th>
+										</tr>
+									</thead>
+        <% @orders.each do |order| %>
+            <tr>
+                <td type = "checkbox"><input type = "checkbox"><br></td>
+                <td class="orderid"><%= order.id %></td>
+                <td class="content"><%= order.content %></td>
+                <td class="time"><%= order.created_at %></td>
+            </tr>
+        <% end %>
+      </table>
+    <a href="orders/new" class="button special">Accept Orders</a>
+  </div>
+</div>
+
