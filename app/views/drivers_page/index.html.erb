@@ -32,7 +32,7 @@
 									</thead>
         <% @orders.each do |order| %>
             <tr>
-                <td><%= check_box_tag(:selectedOrder) %></td>
+                <td class="centerThis"><%= check_box_tag "selectedOrders", order.id %><label for="selectedOrders"></label></td>
                 <td class="orderid"><%= order.id %></td>
                 <td class="content"><%= order.content %></td>
                 <td class="time"><%= order.created_at %></td>
