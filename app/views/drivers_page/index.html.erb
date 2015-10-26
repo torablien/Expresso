@@ -33,14 +33,14 @@
 									</thead>
         <% @orders.each do |order| %>
             <tr>
-                <td><%= check_box_tag "selectedOrders", order.id %><label for="selectedOrders"></label></td>
+                <td><%= check_box_tag "selectedOrders[#{order.id}]_", order.id %><%= label("selectedOrders[#{order.id}]", nil)%></td>
                 <td class="orderid"><%= order.id %></td>
                 <td class="content"><%= order.content %></td>
                 <td class="time"><%= order.created_at %></td>
             </tr>
         <% end %>
       </table>
-    <a href="orders/new" class="button special">Accept Orders</a>
+    <a href="orders/" class="button special">Accept Selected Orders</a>
   </div>
 </div>
 
