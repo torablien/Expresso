@@ -6,9 +6,10 @@
 
 			<nav id="nav">
 				<ul class="links">
-					<li><a href="index.html">Home</a></li>
+					<li><a href="/">Home</a></li>
 					<li><a href="#">Login</a></li>
 					<li><a href="#">Cart</a></li>
+					<li><a href="/drivers">Drivers</a></li>
 					<li><a href="#">About</a></li>
 				</ul>
 			</nav>
@@ -32,14 +33,14 @@
 									</thead>
         <% @orders.each do |order| %>
             <tr>
-                <td type = "checkbox"><input type = "checkbox"><br></td>
+                <td><%= check_box_tag "selectedOrders[#{order.id}]_", order.id %><%= label("selectedOrders[#{order.id}]", nil)%></td>
                 <td class="orderid"><%= order.id %></td>
                 <td class="content"><%= order.content %></td>
                 <td class="time"><%= order.created_at %></td>
             </tr>
         <% end %>
       </table>
-    <a href="orders/new" class="button special">Accept Orders</a>
+    <a href="orders/" class="button special">Accept Selected Orders</a>
   </div>
 </div>
 

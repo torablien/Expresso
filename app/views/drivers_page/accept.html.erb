@@ -1,42 +1,41 @@
 <div class="header">
-  <header id="header">
+<header id="header">
 				<h1><a href="/">Expresso</a></h1>
 				<a href="#nav">Menu</a>
 			</header>
 
 			<nav id="nav">
 				<ul class="links">
-					<li><a href="index.html">Home</a></li>
+					<li><a href="/">Home</a></li>
 					<li><a href="#">Login</a></li>
 					<li><a href="#">Cart</a></li>
+					<li><a href="/drivers">Drivers</a></li>
 					<li><a href="#">About</a></li>
 				</ul>
 			</nav>
-			
   <div class="container">
     <br/>
     <h1>Orders</h1>
   </div>
 </div>
 
-<div class="orders">
+<div class="create">
   <div class="container">
-      <table class="order" style="width:100%">
-        <thead>
-										<tr>
-											<th>ID</th>
-											<th>Description</th>
-											<th>Date Created</th>
-										</tr>
-									</thead>
-        <% @orders.each do |order| %>
-              <tr>
-                <td class="orderid"><%= order.id %></td>
-                <td class="content"><%= order.content %></td>
-                <td class="time"><%= order.created_at %></td>
-              </tr>
-        <% end %>
-      </table>
-    <a href="driver_page/accept" class="button special">Accept Order</a>
+    <%= form_for(@order) do |f| %>
+    	<div class="field">
+            <%= f.label :order, "Create a New Order" %>
+            Please enter your order information below:
+            <%= f.text_area :content %>
+    	</div>
+    	<br>
+    	<div class="actions">
+    	  <%= f.submit "Create" %>
+    	</div>
+    <% end %>
+    
+    
+    
   </div>
 </div>
+
+
