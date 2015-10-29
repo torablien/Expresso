@@ -29,6 +29,7 @@
 											<th>ID</th>
 											<th>Description</th>
 											<th>Date Created</th>
+											<th>Accepted By</th>
 										</tr>
 									</thead>
         <% @orders.each do |order| %>
@@ -37,6 +38,7 @@
                 <td class="orderid"><%= order.id %></td>
                 <td class="content"><%= order.content %></td>
                 <td class="time"><%= order.created_at %></td>
+                <td><%= order.acceptedByID %></td>
             </tr>
         <% end %>
       </table>
