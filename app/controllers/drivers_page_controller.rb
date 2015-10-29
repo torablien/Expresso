@@ -8,7 +8,6 @@ class DriversPageController < ApplicationController
             if obj.checked
                 obj.accepted == true
             end
-                
         end
     end
 end
