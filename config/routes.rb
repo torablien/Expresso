@@ -3,6 +3,8 @@ Rails.application.routes.draw do
   get '/orders' => 'orders#index'
   get '/orders/new' => 'orders#new'
   post 'orders' => 'orders#create'
+  get '/drivers' => 'drivers_page#index'
+  get '/drivers/accept' =>  'drivers_page#accept'
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
 
