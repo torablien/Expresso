@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20151030201938) do
+ActiveRecord::Schema.define(version: 20151101211513) do
 
   create_table "drivers", force: :cascade do |t|
     t.datetime "created_at", null: false
@@ -20,18 +20,20 @@ ActiveRecord::Schema.define(version: 20151030201938) do
 
   create_table "orders", force: :cascade do |t|
     t.text     "content"
+    t.boolean  "accepted"
     t.datetime "created_at",               null: false
     t.datetime "updated_at",               null: false
     t.integer  "acceptedByID", default: 0
   end
 
   create_table "users", force: :cascade do |t|
-    t.text     "name"
-    t.text     "username"
-    t.text     "address"
+    t.string   "name"
+    t.string   "username"
+    t.string   "email"
+    t.string   "address"
+    t.boolean  "isDriver"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
-    t.boolean  "isDriver"
   end
 
 end

@@ -1,0 +1,46 @@
+<div class="header">
+<header id="header">
+				<h1><a href="/">Expresso</a></h1>
+				<a href="#nav">Menu</a>
+			</header>
+
+			<nav id="nav">
+				<ul class="links">
+					<li><a href="/">Home</a></li>
+					<li><a href="#">Login</a></li>
+					<li><a href="#">Cart</a></li>
+					<li><a href="/drivers">Drivers</a></li>
+					<li><a href="#">About</a></li>
+				</ul>
+			</nav>
+  <div class="container">
+    <br/>
+    <h1>Users</h1>
+  </div>
+</div>
+
+<div class="create">
+  <div class="container">
+    <%= form_for(@user) do |f| %>
+    	<div class="field">
+            <%= f.label :user, "Create a New User" %>
+            Full Name:
+            <%= f.text_field :name %>
+            Username:
+            <%= f.text_field :username %>
+            Email:
+            <%= f.text_field :email %>
+            Address:
+            <%= f.text_field :address %>
+            Customer or Driver?:
+            <%= f.select :isDriver, [['Driver', true], ['Customer', false]] %>
+    	</div>
+    	<br>
+    	<div class="actions">
+    	  <%= f.submit "Create" %>
+    	</div>
+    <% end %>
+  </div>
+</div>
+
+

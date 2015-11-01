@@ -5,6 +5,10 @@ Rails.application.routes.draw do
   post 'orders' => 'orders#create'
   get '/drivers' => 'drivers_page#index'
   get '/drivers/accept' =>  'drivers_page#accept'
+  get '/users' => 'users#index'
+  get '/users/new' => 'users#new'
+  post 'users' => 'users#create'
+
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
 
