@@ -11,13 +11,13 @@
     	<div class="field">
             <%= f.label :user, "Create a New User" %>
             Full Name:
-            <%= f.text_field :name %>
+            <%= f.text_field :name %> <br/>
             Username:
-            <%= f.text_field :username %>
+            <%= f.text_field :username %> <br/>
             Email:
-            <%= f.text_field :email %>
+            <%= f.text_field :email %> <br/>
             Address:
-            <%= f.text_field :address %>
+            <%= f.text_field :address %> <br/>
             Customer or Driver?:
             <div class="select-wrapper">
             <%= f.select :isDriver, [['Customer', false], ['Driver', true]] %>
