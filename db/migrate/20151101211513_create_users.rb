@@ -1,10 +1,10 @@
 class CreateUsers < ActiveRecord::Migration
   def change
     create_table :users do |t|
-      t.string :name
-      t.string :username
-      t.string :email
-      t.string :address
+      t.text :name
+      t.text :username
+      t.text :email
+      t.text :address
       t.boolean :isDriver
       t.timestamps null: false
     end
