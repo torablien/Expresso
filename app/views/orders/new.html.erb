@@ -8,24 +8,15 @@
   <div class="container">
     <%= form_for(@order) do |f| %>
     	<div class="field">
-            <%= f.label :order, "Create a New Order" %><br/>
-            
-                
-              
-              
+              <%= f.label :order, "Create a New Order" %><br/>
               Orderer Name:
               <%= f.text_field :name %>
-              
               Location of Pickup:
               <%= f.text_field :location %>
-              
               Time of Pickup:
               <%= f.text_field :time %>
-              
-              
               Food and Drink:
               <%= f.text_area :content %>
-              
               <br/>
               <p align="left">
                 <b>Click Here for Menus</b>
