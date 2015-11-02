@@ -5,9 +5,12 @@
 
 <div class="login">
   <div class="container">
-
-    Current User ID:
-    <%= link_to "Set Current User", "/login", {:class=>"button special"} %>
+    <%= form_tag(controller: 'login', action: 'setCurrUserID') do %>
+        <%= label_tag :newCurrUserID, "Current User ID is " + Rails.application.config.currUserID.to_s  %>
+        New Current User ID:
+        <%= text_field_tag :newCurrUserID %> <br/>
+        <%= submit_tag "Set Current User", class: "button special" %>
+    <% end %>
   </div>
 </div>
 
