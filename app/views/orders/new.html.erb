@@ -8,20 +8,37 @@
   <div class="container">
     <%= form_for(@order) do |f| %>
     	<div class="field">
-            <%= f.label :order, "Create a New Order" %>
+            <%= f.label :order, "Create a New Order" %><br/>
             
-            Please enter your order information below
+                
+              
+              
               Orderer Name:
-              <%= f.text_area :name %>
+              <%= f.text_field :name %>
               
               Location of Pickup:
-              <%= f.text_area :location %>
+              <%= f.text_field :location %>
               
               Time of Pickup:
-              <%= f.text_area :time %>
+              <%= f.text_field :time %>
+              
               
               Food and Drink:
               <%= f.text_area :content %>
+              
+              <br/>
+              <p align="left">
+                <b>Click Here for Menus</b>
+                  <select id="setit" style="color: #000000" size="1" name="test">
+                    <option value=""></option>
+                    <option value="http://www.starbucks.com/menu">Starbucks</option>
+                    <option value="http://www.pjscoffee.com/beverages.php">Pj's Coffee</option>
+                    <option value="http://www.cafedumonde.com/coffee">Cafe Du Monde</option>
+                    </select>
+                    <br/>
+                    <br/>
+                  <input type="button" value="Go to Menu" onclick="window.open(setit.options[setit.selectedIndex].value)">
+              </p>
               
     	</div>
     	<br>
@@ -31,5 +48,3 @@
     <% end %>
   </div>
 </div>
-
-
