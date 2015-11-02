@@ -7,6 +7,7 @@
 
 <div class="orders">
   <div class="container">
+    <%= form_tag(controller: 'drivers_page', action: 'acceptOrders') do %>
       <table class="order" style="width:100%">
         <thead>
 										<tr>
@@ -27,7 +28,8 @@
             </tr>
         <% end %>
       </table>
-    <%= link_to "Accept Selected Orders", "orders/",{ :class=>"button special"} %>
+      <%= submit_tag "Accept Selected Orders", class: "button special" %>
+    <% end %>
   </div>
   
 </div>

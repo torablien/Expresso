@@ -5,6 +5,7 @@ Rails.application.routes.draw do
   post 'orders' => 'orders#create'
   get '/drivers' => 'drivers_page#index'
   get '/drivers/accept' =>  'drivers_page#accept'
+  post 'drivers' => 'drivers_page#acceptOrders'
   get '/users' => 'users#index'
   get '/users/new' => 'users#new'
   post 'users' => 'users#create'

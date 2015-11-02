@@ -8,4 +8,11 @@ class DriversPageController < ApplicationController
             @accepted.push(obj) if obj.checked
         end
     end
+    
+    def acceptOrders
+        puts "PRINTING:"
+        puts params[:selectedOrders]
+        #Order.destroy(params[:selectedOrders])
+        redirect_to '/drivers'
+    end
 end
