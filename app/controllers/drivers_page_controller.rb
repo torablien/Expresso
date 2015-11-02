@@ -5,7 +5,9 @@ class DriversPageController < ApplicationController
     
     def accept
         Orders.each do |obj|
-            @accepted.push(obj) if obj.checked
+            if obj.checked
+                obj.accepted == true
+            end
         end
     end
     

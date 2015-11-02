@@ -9,8 +9,20 @@
     <%= form_for(@order) do |f| %>
     	<div class="field">
             <%= f.label :order, "Create a New Order" %>
-            Please enter your order information below:
-            <%= f.text_area :content %>
+            
+            Please enter your order information below
+              Orderer Name:
+              <%= f.text_area :name %>
+              
+              Location of Pickup:
+              <%= f.text_area :location %>
+              
+              Time of Pickup:
+              <%= f.text_area :time %>
+              
+              Food and Drink:
+              <%= f.text_area :content %>
+              
     	</div>
     	<br>
     	<div class="actions">
