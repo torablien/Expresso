@@ -26,7 +26,7 @@
                 <td class="email"><%= user.email %></td>
                 <td class="address"><%= user.address %></td>
                 <td class="isDriver"><%= user.isDriver %></td>
-                <td class="time"><%= user.created_at %></td>
+                <td class="time"><%= user.created_at.strftime("%I:%M %p on %m/%d/%Y") %></td>
               </tr>
         <% end %>
       </table>
