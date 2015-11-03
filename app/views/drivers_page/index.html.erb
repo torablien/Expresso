@@ -20,6 +20,7 @@
 										</tr>
 									</thead>
         <% @orders.each do |order| %>
+            <% if order.acceptedByID == 0 %>
             <tr>
                 <td><%= check_box_tag "selectedOrders[#{order.id}]_", order.id %><%= label("selectedOrders[#{order.id}]", nil)%></td>
                 <td class="orderid"><%= order.id %></td>
@@ -30,6 +31,7 @@
                 <td class="ordercontents"><%= order.content %></td>
                 <td class="acceptedByID"><%= order.acceptedByID %></td>
             </tr>
+            <% end %>
         <% end %>
       </table>
       <%= submit_tag "Accept Selected Orders", class: "button special" %>
