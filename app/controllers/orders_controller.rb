@@ -18,7 +18,7 @@ class OrdersController < ApplicationController
     
     private 
     def order_params 
-        params.require(:order).permit(:content, :time, :name, :location) 
+        params.require(:order).permit(:content, :time, :name, :location, :restaurant) 
     end
     
 end

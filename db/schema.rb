@@ -23,6 +23,7 @@ ActiveRecord::Schema.define(version: 20151101235024) do
     t.text     "name"
     t.text     "location"
     t.text     "time"
+    t.text     "restaurant"
     t.integer  "acceptedByID", default: 0
     t.datetime "created_at",               null: false
     t.datetime "updated_at",               null: false

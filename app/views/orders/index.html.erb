@@ -14,19 +14,21 @@
 											<th>Time of Delivery</th>
 											<th>Location</th>
 											<th>Name</th>
-											<th>Description</th>
+											<th>Restaurant</th>
+											<th>Order Info</th>
 											<th>Date Created</th>
 										</tr>
 									</thead>
         <% @orders.each do |order| %>
             <% if order.acceptedByID == 0 %>
               <tr>
-                <td class = "orderid"><%= order.id %></td>
-                <td class = "delivery_time"><%= order.time %></td>
-                <td class = "Location"><%= order.location %></td>
-                <td class = "Name"><%= order.name %></td>
-                <td class = "Order Contents"><%= order.content %></td>
-                <td class = "Creation Time"><%= order.created_at %></td>
+                <td class="orderid"><%= order.id %></td>
+                <td class="delivery_time"><%= order.time %></td>
+                <td class="location"><%= order.location %></td>
+                <td class="name"><%= order.name %></td>
+                <td class="restaurantName"><%= order.restaurant %></td>
+                <td class="ordercontents"><%= order.content %></td>
+                <td class="creationtime"><%= order.created_at %></td>
               </tr>
             <% end %>  
         <% end %>

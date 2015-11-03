@@ -8,33 +8,24 @@
   <div class="container">
     <%= form_for(@order) do |f| %>
     	<div class="field">
-              <%= f.label :order, "Create a New Order" %><br/>
+              <%= f.label :order, "Create a New Order" %>
               Orderer Name:
-              <%= f.text_field :name %>
+              <%= f.text_field :name %><br/>
               Location of Pickup:
-              <%= f.text_field :location %>
+              <%= f.text_field :location %><br/>
               Time of Pickup:
-              <%= f.text_field :time %>
+              <%= f.text_field :time %><br/>
+              Restaurant
+              <div class="select-wrapper">
+                <%= f.select :restaurant, [['Starbucks', 'http://www.starbucks.com/menu'], ['PJs Coffee', 'http://www.pjscoffee.com/beverages.php'], ['Cafe Du Monde', 'http://www.cafedumonde.com/coffee']] %>
+              </div><br/> 
               Food and Drink:
               <%= f.text_area :content %>
               <br/>
-              <p align="left">
-                <b>Click Here for Menus</b>
-                  <select id="setit" style="color: #000000" size="1" name="test">
-                    <option value=""></option>
-                    <option value="http://www.starbucks.com/menu">Starbucks</option>
-                    <option value="http://www.pjscoffee.com/beverages.php">Pj's Coffee</option>
-                    <option value="http://www.cafedumonde.com/coffee">Cafe Du Monde</option>
-                    </select>
-                    <br/>
-                    <br/>
-                  <input type="button" value="Go to Menu" onclick="window.open(setit.options[setit.selectedIndex].value)">
-              </p>
-              
     	</div>
-    	<br>
     	<div class="actions">
-    	  <%= f.submit "Create" %>
+    	  <input type="button" value="Go to Selected Menu" onclick="window.open(order_resteraunt.options[order_resteraunt.selectedIndex].value)">
+    	  <%= f.submit "Create Order" %>
     	</div>
     <% end %>
   </div>
