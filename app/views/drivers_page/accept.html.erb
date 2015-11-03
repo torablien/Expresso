@@ -17,7 +17,7 @@
 										</tr>
 									</thead>
         <% @orders.each do |order| %>
-            <% if order.acceptedByID == Rails.application.config.currUserID %>
+            <% if order.acceptedByID == Rails.application.config.currUserID || Rails.application.config.currUserID = -1 %>
               <tr>
                 <td class="orderid"><%= order.id %></td>
                 <td class="delivery_time"><%= order.time %></td>
