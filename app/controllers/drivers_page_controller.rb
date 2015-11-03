@@ -4,17 +4,14 @@ class DriversPageController < ApplicationController
     end
     
     def accept
-        Orders.each do |obj|
-            if obj.checked
-                obj.accepted == true
-            end
-        end
+       @orders = Order.all
     end
     
     def acceptOrders
-        puts "PRINTING:"
+        puts "PRINTING CHECKED VALUES:"
         puts params[:selectedOrders]
-        #Order.destroy(params[:selectedOrders])
-        redirect_to '/drivers'
+        #Take checked values and set the orders in order table with id = value so that
+        # the order's acceptedByID = Rails.application.config.currUserID
+        redirect_to '/drivers/accept'
     end
 end

@@ -1,6 +1,6 @@
   <div class="container">
     <br/>
-    <h1>Orders</h1>
+    <h1>Pending Orders</h1>
   </div>
 
 <div class="orders">
@@ -36,39 +36,6 @@
     <% end %>
   </div>
    <br/>
-  <div class="container">
-    <br/>
-    <h1>Accepted Orders</h1>
-  </div>
-
-    <div class="container">
-      <table class="order" style="width:100%">
-        <thead>
-										<tr>
-											<th>ID</th>
-											<th>Time of Delivery</th>
-											<th>Location</th>
-											<th>Name</th>
-											<th>Restaurant</th>
-											<th>Order Info</th>
-											<th>Accepted By</th>
-										</tr>
-									</thead>
-        <% @orders.each do |order| %>
-            <% if order.acceptedByID > 0 %>
-              <tr>
-                <td class="orderid"><%= order.id %></td>
-                <td class="delivery_time"><%= order.time %></td>
-                <td class="location"><%= order.location %></td>
-                <td class="name"><%= order.name %></td>
-                <td class="restaurantName"><%= order.restaurant %></td>
-                <td class="ordercontents"><%= order.content %></td>
-                <td class="acceptedByID"><%= order.acceptedByID %></td>
-              </tr>
-            <% end %>  
-        <% end %>
-      </table>
-    <%= link_to "Mark Selected As Done", "/orders",{ :class=>"button special"} %>
-  </div>
+   
 </div>
 
