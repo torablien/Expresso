@@ -6,6 +6,7 @@ class CreateOrders < ActiveRecord::Migration
       t.text :location
       t.text :time
       t.text :restaurant
+      t.integer :createdByID
       t.integer :acceptedByID, default: 0
       t.timestamps null: false
     end

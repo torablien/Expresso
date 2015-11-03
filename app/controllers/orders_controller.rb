@@ -9,6 +9,7 @@ class OrdersController < ApplicationController
     
     def create 
         @order = Order.new(order_params) 
+        @order.createdByID = Rails.application.config.currUserID
         if @order.save 
             redirect_to '/orders' 
         else 

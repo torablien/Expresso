@@ -1,5 +1,3 @@
-
-			
   <div class="container">
     <br/>
     <h1>Orders</h1>
@@ -17,18 +15,20 @@
 											<th>Restaurant</th>
 											<th>Order Info</th>
 											<th>Date Created</th>
+											<th>Created By</th>
 										</tr>
 									</thead>
         <% @orders.each do |order| %>
             <% if order.acceptedByID == 0 %>
               <tr>
-                <td class="orderid"><%= order.id %></td>
-                <td class="delivery_time"><%= order.time %></td>
+                <td class="orderID"><%= order.id %></td>
+                <td class="deliveryTime"><%= order.time %></td>
                 <td class="location"><%= order.location %></td>
                 <td class="name"><%= order.name %></td>
                 <td class="restaurantName"><%= order.restaurant %></td>
-                <td class="ordercontents"><%= order.content %></td>
-                <td class="creationtime"><%= order.created_at %></td>
+                <td class="orderContents"><%= order.content %></td>
+                <td class="creationTime"><%= order.created_at %></td>
+                <td class="createdByID"><%= order.createdByID %></td>
               </tr>
             <% end %>  
         <% end %>
