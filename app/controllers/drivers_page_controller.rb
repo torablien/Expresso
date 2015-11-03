@@ -16,4 +16,14 @@ class DriversPageController < ApplicationController
         end
         redirect_to '/drivers/accept'
     end
+    
+    def finishOrders
+        @finishThese = params[:doneOrders]
+        if @finishThese != nil
+            @finishThese.each do |x|
+                 Order.update(x[0], :acceptedByID => -999)
+            end
+        end
+        redirect_to '/drivers/accept'
+    end
 end
