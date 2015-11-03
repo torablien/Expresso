@@ -24,7 +24,7 @@ module Expresso
 
     # Do not swallow errors in after_commit/after_rollback callbacks.
     config.active_record.raise_in_transactional_callbacks = true 
-    config.currUserID = 5 #Rails.application.config.currUserID
+    config.currUserID = 1 #Rails.application.config.currUserID
 
   end
 end
