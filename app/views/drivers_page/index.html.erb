@@ -32,7 +32,7 @@
 											<th>Accepted By</th>
 										</tr>
 									</thead>
-        <% @orders.sort{|a,b| a.id <=> b.id}each do |order| %>
+        <% @orders.sort{|a,b| a.id <=> b.id}.each do |order| %>
             <% if order.acceptedByID == 0 || Rails.application.config.currUserID == -1 %>
             <tr>
                 <td><%= check_box_tag "selectedOrders[#{order.id}]_", order.id %><%= label("selectedOrders[#{order.id}]", nil)%></td>
