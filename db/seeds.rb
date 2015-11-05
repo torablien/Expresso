@@ -14,4 +14,4 @@ sarah = User.create(name: "Sarah Lohmeier", username: "slohmeier", email: "slohm
 peter = User.create(name: "Peter Riser", username: "priser", email: "priser@tulane.edu", address: "31 McAlister Drive", isDriver: true)
 
 
-#admin = User.create(name: "Administrator", username: "admin", email: "admin@expresso-studio.com", address: "Stanley Thomas 302", isDriver: false)
+admin = User.create(id: -1, name: "Administrator", username: "admin", email: "admin@expresso-studio.com", address: "Stanley Thomas 302", isDriver: false)
