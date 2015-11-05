@@ -13,11 +13,6 @@
 
 ActiveRecord::Schema.define(version: 20151101235024) do
 
-  create_table "drivers", force: :cascade do |t|
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
-  end
-
   create_table "orders", force: :cascade do |t|
     t.text     "content"
     t.text     "name"
