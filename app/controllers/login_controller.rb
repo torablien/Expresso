@@ -9,6 +9,8 @@ class LoginController < ApplicationController
     def setCurrUserID
         if isInt(params[:newCurrUserID])
             Rails.application.config.currUserID = params[:newCurrUserID].to_i
+        else
+            flash[:login] = "Current User ID must be an integer"
         end
         redirect_to '/login'
     end
