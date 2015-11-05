@@ -22,6 +22,8 @@
         <%= label_tag :newCurrUserID, "Current Username: " + User.find(Rails.application.config.currUserID).username %>
         Username:
         <%= text_field_tag :newCurrUserID %> <br/>
+        Password:
+        <%= password_field(:account, :secret) %> <br/>
         <%= submit_tag "Login", class: "button special" %>
         <%= link_to "Register", "users/new",{ :class=>"button special"} %>
     <% end %>
