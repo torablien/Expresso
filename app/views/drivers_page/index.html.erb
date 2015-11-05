@@ -1,48 +1,43 @@
-<div class="header">
-  <header id="header">
-				<h1><a href="/">Expresso</a></h1>
-				<a href="#nav">Menu</a>
-			</header>
-
-			<nav id="nav">
-				<ul class="links">
-					<li><a href="/">Home</a></li>
-					<li><a href="#">Login</a></li>
-					<li><a href="#">Cart</a></li>
-					<li><a href="/drivers">Drivers</a></li>
-					<li><a href="#">About</a></li>
-				</ul>
-			</nav>
-			
   <div class="container">
     <br/>
-    <h1>Orders</h1>
+    <h1>Pending Orders</h1>
   </div>
-</div>
 
 <div class="orders">
   <div class="container">
+    <%= form_tag(controller: 'drivers_page', action: 'acceptOrders') do %>
       <table class="order" style="width:100%">
         <thead>
 										<tr>
-										    <th>Accept</th>
+										  <th>Accept</th>
 											<th>ID</th>
-											<th>Description</th>
-											<th>Date Created</th>
+											<th>Time of Delivery</th>
+											<th>Location</th>
+											<th>Name</th>
+											<th>Restaurant</th>
+											<th>Order Info</th>
 											<th>Accepted By</th>
 										</tr>
 									</thead>
         <% @orders.each do |order| %>
+            <% if order.acceptedByID == 0 || Rails.application.config.currUserID == -1 %>
             <tr>
                 <td><%= check_box_tag "selectedOrders[#{order.id}]_", order.id %><%= label("selectedOrders[#{order.id}]", nil)%></td>
                 <td class="orderid"><%= order.id %></td>
-                <td class="content"><%= order.content %></td>
-                <td class="time"><%= order.created_at %></td>
-                <td><%= order.acceptedByID %></td>
+                <td class="delivery_time"><%= order.time %></td>
+                <td class="location"><%= order.location %></td>
+                <td class="name"><%= order.name %></td>
+                <td class="restaurantName"><%= order.restaurant %></td>
+                <td class="ordercontents"><%= order.content %></td>
+                <td class="acceptedByID"><%= order.acceptedByID %></td>
             </tr>
+            <% end %>
         <% end %>
       </table>
-    <%= link_to "Accept Selected Orders", "orders/",{ :class=>"button special"} %>
-  </div>
+      <%= submit_tag "Accept Selected Orders", class: "button special" %>
+      <%= link_to "View Accepted Orders", "/drivers/accept",{ :class=>"button special"} %>
+    <% end %>
+  </div><br/>
+   
 </div>
 

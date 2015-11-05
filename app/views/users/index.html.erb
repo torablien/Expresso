@@ -1,0 +1,36 @@
+
+  <div class="container">
+    <br/>
+    <h1>Users</h1>
+  </div>
+
+<div class="users">
+  <div class="container">
+      <table class="userTable" style="width:100%">
+        <thead>
+										<tr>
+											<th>ID</th>
+											<th>Name</th>
+											<th>Username</th>
+											<th>Email</th>
+											<th>Address</th>
+											<th>isDriver</th>
+											<th>Date Created</th>
+										</tr>
+									</thead>
+        <% @users.each do |user| %>
+              <tr>
+                <td class="userID"><%= user.id %></td>
+                <td class="name"><%= user.name %></td>
+                <td class="username"><%= user.username %></td>
+                <td class="email"><%= user.email %></td>
+                <td class="address"><%= user.address %></td>
+                <td class="isDriver"><%= user.isDriver %></td>
+                <td class="time"><%= user.created_at.strftime("%I:%M %p on %m/%d/%Y") %></td>
+              </tr>
+        <% end %>
+      </table>
+    <%= link_to "New User", "users/new",{ :class=>"button special"} %>
+  </div>
+</div>
+

@@ -9,6 +9,22 @@
 </head>
 <body>
 
+<header id="header">
+				<h1><a href="/">Expresso</a></h1>
+				Hello, User #<%= Rails.application.config.currUserID %>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+				<a href="#nav">Menu</a>
+			</header>
+
+			<nav id="nav">
+				<ul class="links">
+					<li><a href="/">Home</a></li>
+					<li><a href="/login">Login</a></li>
+					<li><a href="/orders">Orders</a></li>
+					<li><a href="/users">Users</a></li>
+					<li><a href="/drivers">Drivers</a></li>
+				</ul>
+			</nav>
+
 <%= yield %>
 
 

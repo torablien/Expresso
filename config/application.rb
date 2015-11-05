@@ -23,7 +23,8 @@ module Expresso
     # config.i18n.default_locale = :de
 
     # Do not swallow errors in after_commit/after_rollback callbacks.
-    config.active_record.raise_in_transactional_callbacks = true
-
+    config.active_record.raise_in_transactional_callbacks = true 
+    config.currUserID = 1 #Rails.application.config.currUserID
+    config.time_zone = 'Central Time (US & Canada)'
   end
 end
