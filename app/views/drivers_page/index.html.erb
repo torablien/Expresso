@@ -6,7 +6,7 @@
 <div class="container">
 <% if !flash.empty? %>
   <div id="errorExplanation">
-    <h1><%= pluralize(flash.count, "error") %> prohibited selection:</h1>
+    <h1><%= pluralize(flash.count, "error") %> prohibited acceptance:</h1>
     <ul>
     <% flash.each do |name, msg| %>
       <li><%= msg %></li>
@@ -32,7 +32,7 @@
 											<th>Accepted By</th>
 										</tr>
 									</thead>
-        <% @orders.each do |order| %>
+        <% @orders.sort.each do |order| %>
             <% if order.acceptedByID == 0 || Rails.application.config.currUserID == -1 %>
             <tr>
                 <td><%= check_box_tag "selectedOrders[#{order.id}]_", order.id %><%= label("selectedOrders[#{order.id}]", nil)%></td>
