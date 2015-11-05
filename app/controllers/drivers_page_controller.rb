@@ -13,8 +13,11 @@ class DriversPageController < ApplicationController
             @workaround.each do |x|
                  Order.update(x[0], :acceptedByID => Rails.application.config.currUserID)
             end
+            redirect_to '/drivers/accept'
+        else
+            flash[:checked] = "No orders were selected"
+            redirect_to '/drivers'
         end
-        redirect_to '/drivers/accept'
     end
     
     def finishOrders
@@ -23,6 +26,8 @@ class DriversPageController < ApplicationController
             @finishThese.each do |x|
                  Order.update(x[0], :acceptedByID => -999)
             end
+        else
+            flash[:checked] = "No orders were selected"    
         end
         redirect_to '/drivers/accept'
     end

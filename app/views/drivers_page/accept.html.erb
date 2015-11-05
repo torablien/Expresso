@@ -3,6 +3,20 @@
     <br/>
     <h1>Accepted Orders</h1>
   </div>
+  
+  <div class="container">
+  <% if !flash.empty? %>
+    <div id="errorExplanation">
+      <h1><%= pluralize(flash.count, "error") %> prohibited login:</h1>
+      <ul>
+      <% flash.each do |name, msg| %>
+        <li><%= msg %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+  </div>  
+  
     <div class="container">
       <%= form_tag(controller: 'drivers_page', action: 'finishOrders') do %>
       <table class="order" style="width:100%">
