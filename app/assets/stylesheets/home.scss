@@ -2483,6 +2483,17 @@ table td input[type="checkbox"] + label{
 	vertical-align: top;
 }
 
+tr.finishedOrderRow, tr.finishedOrderRow:nth-child(2n+1){
+	background-color: rgba(0, 255, 0, 0.2);
+}
+
+tr.pendingOrderRow, tr.pendingOrderRow:nth-child(2n+1){
+	background-color: rgba(144, 144, 144, 0.075);
+}
+
+tr.acceptedOrderRow, tr.acceptedOrderRow:nth-child(2n+1){
+	background-color: rgba(255, 255, 255, 0.25);
+}
 
 /* Button */
 

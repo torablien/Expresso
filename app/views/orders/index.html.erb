@@ -15,12 +15,19 @@
 											<th>Restaurant</th>
 											<th>Order Info</th>
 											<th>Date Created</th>
-											<th>Created By</th>
+											<th>Status</th>
 										</tr>
 									</thead>
         <% @orders.each do |order| %>
             <% if order.createdByID == Rails.application.config.currUserID || Rails.application.config.currUserID == -1 %>
-              <tr>
+              <tr class=<%=
+              if order.isDone
+                "finishedOrderRow"
+              elsif order.acceptedByID > 0 
+                "acceptedOrderRow"
+              else
+                "pendingOrderRow"
+              end%>>
                 <td class="orderID"><%= order.id %></td>
                 <td class="deliveryTime"><%= order.time %></td>
                 <td class="location"><%= order.location %></td>
@@ -28,7 +35,13 @@
                 <td class="restaurantName"><%= order.restaurant %></td>
                 <td class="orderContents"><%= order.content %></td>
                 <td class="creationTime"><%= order.created_at.strftime("%I:%M %p on %m/%d/%Y") %></td>
-                <td class="createdByID"><%= order.createdByID %></td>
+                <% if order.isDone %>
+                  <td class="finishedOrderColumn">Completed</td>
+                <% elsif order.acceptedByID > 0 %>
+                  <td class="acceptedOrderColumn">Accepted</td>
+                <% else %>
+                  <td class="pendingOrderColumn">Pending</td>
+                <% end %>
               </tr>
             <% end %>  
         <% end %>
