@@ -24,7 +24,7 @@ class DriversPageController < ApplicationController
         @finishThese = params[:doneOrders]
         if @finishThese != nil
             @finishThese.each do |x|
-                 Order.update(x[0], :acceptedByID => -999)
+                 Order.update(x[0], :isDone => true)
             end
         else
             flash[:checked] = "No orders were selected"    

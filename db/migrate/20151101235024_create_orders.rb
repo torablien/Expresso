@@ -8,6 +8,7 @@ class CreateOrders < ActiveRecord::Migration
       t.text :restaurant
       t.integer :createdByID
       t.integer :acceptedByID, default: 0
+      t.boolean :isDone, default: false
       t.timestamps null: false
     end
   end

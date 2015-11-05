@@ -21,8 +21,9 @@ ActiveRecord::Schema.define(version: 20151101235024) do
     t.text     "restaurant"
     t.integer  "createdByID"
     t.integer  "acceptedByID", default: 0
-    t.datetime "created_at",               null: false
-    t.datetime "updated_at",               null: false
+    t.boolean  "isDone",       default: false
+    t.datetime "created_at",                   null: false
+    t.datetime "updated_at",                   null: false
   end
 
   create_table "users", force: :cascade do |t|
