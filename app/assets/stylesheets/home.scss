@@ -1827,7 +1827,7 @@ form ul.actions {
 }
 
 
-.field_with_errors input[type="text"] {
+.field_with_errors input[type="text"], .field_with_errors textarea {
 	border-color: red;
 	box-shadow: 0 0 0 1px red;
 }
