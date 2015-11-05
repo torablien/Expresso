@@ -5,6 +5,20 @@
   </div>
 
 
+<div class="container">
+<% if @user.errors.any? %>
+  <div id="errorExplanation">
+    <h1><%= pluralize(@user.errors.count, "error") %> prohibited this user from being created:</h1>
+    <ul>
+    <% @user.errors.full_messages.each do |msg| %>
+      <li><%= msg %></li>
+    <% end %>
+    </ul>
+  </div>
+<% end %>
+</div>
+
+
 <div class="create">
   <div class="container">
     <%= form_for(@user) do |f| %>
