@@ -3,5 +3,4 @@ class Order < ActiveRecord::Base
         validates :location, presence: true
         validates :time, presence: true
         validates :content, presence: true
-
 end
