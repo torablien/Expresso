@@ -11,21 +11,19 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20151105221419) do
-
-  create_table "drivers", force: :cascade do |t|
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
-  end
+ActiveRecord::Schema.define(version: 20151112224938) do
 
   create_table "orders", force: :cascade do |t|
     t.text     "content"
     t.text     "name"
     t.text     "location"
     t.text     "time"
+    t.text     "restaurant"
+    t.integer  "createdByID"
     t.integer  "acceptedByID", default: 0
-    t.datetime "created_at",               null: false
-    t.datetime "updated_at",               null: false
+    t.boolean  "isDone",       default: false
+    t.datetime "created_at",                   null: false
+    t.datetime "updated_at",                   null: false
   end
 
   create_table "stores", force: :cascade do |t|
@@ -36,11 +34,12 @@ ActiveRecord::Schema.define(version: 20151105221419) do
   end
 
   create_table "users", force: :cascade do |t|
-    t.text     "name"
-    t.text     "username"
-    t.text     "email"
-    t.text     "address"
-    t.boolean  "isDriver"
+    t.string   "provider"
+    t.string   "uid"
+    t.string   "name"
+    t.string   "image"
+    t.string   "token"
+    t.datetime "expires_at"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end
