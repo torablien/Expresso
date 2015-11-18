@@ -19,7 +19,7 @@
 <div class="login">
   <div class="container">
     <%= form_tag(controller: 'login', action: 'setCurrUserID') do %>
-        <%= label_tag :newCurrUserID, "Current Username: " + User.find(Rails.application.config.currUserID).username %>
+        <%= label_tag :newCurrUserID, "Current Username: " + User.find(session[:user_id]).name %>
         Username:
         <%= text_field_tag :newCurrUserID %> <br/>
         Password:

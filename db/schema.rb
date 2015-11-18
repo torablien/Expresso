@@ -39,9 +39,12 @@ ActiveRecord::Schema.define(version: 20151112224938) do
     t.string   "name"
     t.string   "image"
     t.string   "token"
+    t.string   "email"
+    t.string   "address"
+    t.boolean  "isDriver",   default: false
     t.datetime "expires_at"
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
+    t.datetime "created_at",                 null: false
+    t.datetime "updated_at",                 null: false
   end
 
 end
