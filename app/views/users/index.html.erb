@@ -11,6 +11,8 @@
 										<tr>
 											<th>ID</th>
 											<th>Name</th>
+											<th>Username</th>
+											<th>Email</th>
 											<th>Address</th>
 											<th>isDriver</th>
 											<th>Date Created</th>
@@ -20,6 +22,7 @@
               <tr>
                 <td class="userID"><%= user.uid %></td>
                 <td class="name"><%= user.name %></td>
+                <td class="email"><%= user.email %></td>
                 <td class="address"><%= user.address %></td>
                 <td class="isDriver"><%= user.isDriver %></td>
                 <td class="time"><%= user.created_at.strftime("%I:%M %p on %m/%d/%Y") %></td>
