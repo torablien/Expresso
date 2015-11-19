@@ -1,0 +1,43 @@
+  <div class="container">
+    <br/>
+    <h1>Edit Order # <%= @currOrder.id %></h1>
+  </div>
+
+<div class="container">
+<% if @currOrder.errors.any? %>
+  <div id="errorExplanation">
+    <h1><%= pluralize(@currOrder.errors.count, "error") %> prohibited this order from being edited::</h1>
+    <ul>
+    <% @currOrder.errors.full_messages.each do |msg| %>
+      <li><%= msg %></li>
+    <% end %>
+    </ul>
+  </div>
+<% end %>
+</div>
+
+<div class="create">
+  <div class="container">
+    <%= form_for(@currOrder) do |f| %>
+        <div class="field">
+              Orderer Name:
+              <%= f.text_field :name %><br/>
+              Location of Pickup:
+              <%= f.text_field :location %><br/>
+              Time of Pickup:
+              <%= f.text_field :time %><br>
+              Restaurant
+              <div class="select-wrapper">
+                <%= f.select :restaurant, [['Starbucks', 'http://www.starbucks.com/menu'], ['PJs Coffee', 'http://www.pjscoffee.com/beverages.php'], ['Cafe Du Monde', 'http://www.cafedumonde.com/coffee']] %>
+              </div><br/> 
+              Food and Drink:
+              <%= f.text_area :content %>
+              <br/>
+    	</div>
+    	<div class="actions">
+    	  <input type="button" value="Go to Selected Menu" onclick="window.open(order_restaurant.options[order_restaurant.selectedIndex].value)">
+    	  <%= f.submit "Update Order" %>
+    	</div>
+    <% end %>
+  </div>
+</div>

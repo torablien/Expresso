@@ -3,17 +3,24 @@ Rails.application.routes.draw do
   get '/orders' => 'orders#index'
   get '/orders/new' => 'orders#new'
   post 'orders' => 'orders#create'
+  get '/orders/:id/edit' => 'orders#edit'
+  patch '/orders/:id' => 'orders#update'
+  resources :orders
+  
   get '/drivers' => 'drivers_page#index'
   get '/drivers/accept' =>  'drivers_page#accept'
   post 'drivers' => 'drivers_page#acceptOrders'
   post 'drivers/accept' => 'drivers_page#finishOrders'
+  
   get '/users' => 'users#index'
   get '/users/new' => 'users#new'
   post 'users' => 'users#create'
+  
   get '/login' => 'login#index'
   post 'login' => 'login#setCurrUserID'
   get 'auth/:provider/callback', to: 'sessions#create'
   get 'logout', to: 'sessions#destroy'
+  
 
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
