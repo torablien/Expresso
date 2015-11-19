@@ -19,6 +19,10 @@ class OrdersController < ApplicationController
         @currOrder = Order.find(params[:id])
     end
     
+    def show
+        @currOrder = Order.find(params[:id])
+    end
+    
     
     def create 
         @order = Order.new(order_params) 
@@ -56,6 +60,12 @@ class OrdersController < ApplicationController
         else 
             render 'edit' 
         end 
+    end
+    
+    def destroy(deleteThis)
+        #Order.find(params[:id]).destroy
+        deleteThis.destroy
+        redirect_to '/orders'
     end
     
     private 
