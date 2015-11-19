@@ -11,6 +11,7 @@ class CreateUsers < ActiveRecord::Migration
       t.text :email
       t.text :address
       t.boolean :isDriver, default: false
+      t.boolean :isAdmin, default: false
       t.timestamps null: false
     end
   end
