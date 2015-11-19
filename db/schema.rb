@@ -17,7 +17,7 @@ ActiveRecord::Schema.define(version: 20151101235024) do
     t.text     "content"
     t.text     "name"
     t.text     "location"
-    t.datetime "time"
+    t.text     "time"
     t.text     "restaurant"
     t.integer  "createdByID"
     t.integer  "acceptedByID", default: 0
@@ -36,9 +36,9 @@ ActiveRecord::Schema.define(version: 20151101235024) do
     t.text     "username"
     t.text     "email"
     t.text     "address"
-    t.boolean  "isDriver"
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
+    t.boolean  "isDriver",   default: false
+    t.datetime "created_at",                 null: false
+    t.datetime "updated_at",                 null: false
   end
 
 end
