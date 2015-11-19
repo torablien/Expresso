@@ -33,7 +33,7 @@
 										</tr>
 									</thead>
         <% @orders.each do |order| %>
-            <% if (order.acceptedByID == Rails.application.config.currUserID && order.isDone == false) || Rails.application.config.currUserID == -1 %>
+            <% if (order.acceptedByID == session[:user_id] && order.isDone == false) || session[:user_id] == -1 %>
               <tr>
                 <td><%= check_box_tag "doneOrders[#{order.id}]_", order.id %><%= label("doneOrders[#{order.id}]", nil)%></td>
                 <td class="orderid"><%= order.id %></td>

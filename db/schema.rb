@@ -34,6 +34,7 @@ ActiveRecord::Schema.define(version: 20151112224938) do
   end
 
   create_table "users", force: :cascade do |t|
+<<<<<<< HEAD
     t.string   "provider"
     t.string   "uid"
     t.string   "name"
@@ -43,6 +44,18 @@ ActiveRecord::Schema.define(version: 20151112224938) do
     t.string   "address"
     t.boolean  "isDriver",   default: false
     t.datetime "expires_at"
+=======
+    t.text     "provider"
+    t.text     "uid"
+    t.text     "name"
+    t.text     "image"
+    t.text     "token"
+    t.datetime "expires_at"
+    t.text     "username"
+    t.text     "email"
+    t.text     "address"
+    t.boolean  "isDriver",   default: false
+>>>>>>> eda1b488f595cb1a0daa15ab14d2740ca1de2f2d
     t.datetime "created_at",                 null: false
     t.datetime "updated_at",                 null: false
   end

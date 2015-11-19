@@ -19,7 +19,10 @@
 <div class="login">
   <div class="container">
     <%= form_tag(controller: 'login', action: 'setCurrUserID') do %>
+<<<<<<< HEAD
         <%= label_tag :newCurrUserID, "Current Username: " + User.find(session[:user_id]).name %>
+=======
+>>>>>>> eda1b488f595cb1a0daa15ab14d2740ca1de2f2d
         Username:
         <%= text_field_tag :newCurrUserID %> <br/>
         Password:

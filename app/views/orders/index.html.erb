@@ -16,6 +16,7 @@
 											<th>Order Info</th>
 											<th>Date Created</th>
 											<th>Status</th>
+											<th>Edit</th>
 										</tr>
 									</thead>
         <% @orders.each do |order| %>
@@ -42,6 +43,7 @@
                 <% else %>
                   <td class="pendingOrderColumn">Pending</td>
                 <% end %>
+                <td class="editButton"><%= link_to 'Edit', edit_order_path(order) %></td>
               </tr>
             <% end %>  
         <% end %>

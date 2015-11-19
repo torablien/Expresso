@@ -1,15 +1,14 @@
-
   <div class="container">
     <br/>
-    <h1>Orders</h1>
+    <h1>Edit Order # <%= @currOrder.id %></h1>
   </div>
-  
+
 <div class="container">
-<% if @order.errors.any? %>
+<% if @currOrder.errors.any? %>
   <div id="errorExplanation">
-    <h1><%= pluralize(@order.errors.count, "error") %> prohibited this order from being created:</h1>
+    <h1><%= pluralize(@currOrder.errors.count, "error") %> prohibited this order from being edited::</h1>
     <ul>
-    <% @order.errors.full_messages.each do |msg| %>
+    <% @currOrder.errors.full_messages.each do |msg| %>
       <li><%= msg %></li>
     <% end %>
     </ul>
@@ -19,9 +18,8 @@
 
 <div class="create">
   <div class="container">
-    <%= form_for(@order) do |f| %>
-    	<div class="field">
-              <%= f.label :order, "Create a New Order" %>
+    <%= form_for(@currOrder) do |f| %>
+        <div class="field">
               Orderer Name:
               <%= f.text_field :name %><br/>
               Location of Pickup:
@@ -38,7 +36,7 @@
     	</div>
     	<div class="actions">
     	  <input type="button" value="Go to Selected Menu" onclick="window.open(order_restaurant.options[order_restaurant.selectedIndex].value)">
-    	  <%= f.submit "Create Order" %>
+    	  <%= f.submit "Update Order" %>
     	</div>
     <% end %>
   </div>

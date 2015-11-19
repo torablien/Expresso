@@ -12,17 +12,27 @@
 		<!-- Header -->
 			<header id="header" class="alt">
 				<h1><a href="/">Home</a></h1>
-				Hello, <%= @currUserDisplay %>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+				<% if @isLoggedIn %>
+						<%= @currUserDisplay %>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+				<% end %>
 				<a href="#nav">Menu</a>
 			</header>
 
 			<nav id="nav">
 				<ul class="links">
 					<li><a href="/">Home</a></li>
+<<<<<<< HEAD
 					<li><a href="/auth/facebook">Login</a></li>
+=======
+					<% if not @isLoggedIn %>
+					<li><a href="/auth/facebook">Login</a></li>
+					<% else %>
+					<li><a href="/logout">logout</a></li>
+>>>>>>> eda1b488f595cb1a0daa15ab14d2740ca1de2f2d
 					<li><a href="/orders">Orders</a></li>
 					<li><a href="/users">Users</a></li>
 					<li><a href="/drivers">Drivers</a></li>
+					<% end %>
 				</ul>
 			</nav>
 
@@ -32,7 +42,11 @@
 				<h2>Expresso</h2>
 				<p>Coffee is always a good idea</p>
 				<ul class="actions">
+				<% if @isLoggedIn %>
 					<li><a href="/orders" class="button big">Order Now</a></li>
+				<% else %>
+					<li><a href="/auth/facebook" class="button big">Login</a></li>
+				<% end %>
 				</ul>
 			</section>
 
