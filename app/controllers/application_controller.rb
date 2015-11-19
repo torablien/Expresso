@@ -5,11 +5,17 @@ class ApplicationController < ActionController::Base
   before_filter :setCurrUserDisplay, :except => [:create, :update, :destroy]
   
   def setCurrUserDisplay
-    if User.exists?(Rails.application.config.currUserID)
-        @currUserDisplay = /([^\s]+)/.match(User.find(Rails.application.config.currUserID).name)
+    
+    if User.exists?(session[:user_id])
+        @currUserDisplay = "Hello, " + /([^\s]+)/.match(User.find(session[:user_id]).name).to_s
+        @isLoggedIn = true
     else
-        @currUserDisplay = "User #" + Rails.application.config.currUserID.to_s
+        @currUserDisplay = "Login"
+        @isLoggedIn = false
     end
+    
+    
+
   end
   
 end
