@@ -38,7 +38,11 @@
 				<h2>Expresso</h2>
 				<p>Coffee is always a good idea</p>
 				<ul class="actions">
+				<% if @isLoggedIn %>
 					<li><a href="/orders" class="button big">Order Now</a></li>
+				<% else %>
+					<li><a href="/auth/facebook" class="button big">Login</a></li>
+				<% end %>
 				</ul>
 			</section>
 

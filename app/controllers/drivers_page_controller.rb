@@ -1,4 +1,6 @@
 class DriversPageController < ApplicationController
+    before_filter :requireLogin
+    
     def index
         @orders = Order.all
     end
