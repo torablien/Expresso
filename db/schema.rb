@@ -17,7 +17,7 @@ ActiveRecord::Schema.define(version: 20151101235024) do
     t.text     "content"
     t.text     "name"
     t.text     "location"
-    t.text     "time"
+    t.datetime "time"
     t.text     "restaurant"
     t.integer  "createdByID"
     t.integer  "acceptedByID", default: 0

@@ -10,7 +10,7 @@ class CreateUsers < ActiveRecord::Migration
       t.text :username
       t.text :email
       t.text :address
-      t.boolean :isDriver
+      t.boolean :isDriver, default: false
       t.timestamps null: false
     end
   end
