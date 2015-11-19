@@ -1,4 +1,5 @@
 class OrdersController < ApplicationController
+    
     def index
         @orders = Order.all
     end
@@ -9,7 +10,7 @@ class OrdersController < ApplicationController
     
     def create 
         @order = Order.new(order_params) 
-        @order.createdByID = Rails.application.config.currUserID
+        @order.createdByID = session[:user_id]
         if @order.restaurant == "http://www.starbucks.com/menu"
             @order.restaurant = "Starbucks"
         end

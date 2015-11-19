@@ -4,7 +4,7 @@ class LoginController < ApplicationController
     
     def setCurrUserID
             if User.exists?(:username => params[:newCurrUserID])
-                Rails.application.config.currUserID = User.find_by_username(params[:newCurrUserID]).id
+                session[:user_id] = User.find_by_username(params[:newCurrUserID]).id
             else
                 flash[:login] = "User does not exist"
             end

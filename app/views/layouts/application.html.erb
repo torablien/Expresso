@@ -10,10 +10,8 @@
 
 <header id="header">
 				<h1><a href="/">Expresso</a></h1>
-				<% if@isLoggedIn %>
+				<% if @isLoggedIn %>
 						<%= @currUserDisplay %>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-				<% else %>
-					<a href="/auth/facebook">Login</a
 				<% end %>
 				<a href="#nav">Menu</a>
 			</header>
@@ -21,10 +19,14 @@
 			<nav id="nav">
 				<ul class="links">
 					<li><a href="/">Home</a></li>
-					<li><a href="/login">Login</a></li>
+					<% if not @isLoggedIn %>
+					<li><a href="/auth/facebook">Login</a></li>
+					<% else %>
+					<li><a href="/logout">logout</a></li>
 					<li><a href="/orders">Orders</a></li>
 					<li><a href="/users">Users</a></li>
 					<li><a href="/drivers">Drivers</a></li>
+					<% end %>
 				</ul>
 			</nav>
 
