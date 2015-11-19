@@ -11,7 +11,7 @@ class DriversPageController < ApplicationController
         @workaround = params[:selectedOrders]
         if @workaround != nil
             @workaround.each do |x|
-                 Order.update(x[0], :acceptedByID => Rails.application.config.currUserID)
+                 Order.update(x[0], :acceptedByID => session[:user_id])
             end
             redirect_to '/drivers/accept'
         else

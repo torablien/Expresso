@@ -13,4 +13,10 @@ class ApplicationController < ActionController::Base
         @isLoggedIn = false
     end
   end
+  
+    def requireLogin
+        if session[:user_id] == nil
+            redirect_to "/"
+        end
+    end
 end

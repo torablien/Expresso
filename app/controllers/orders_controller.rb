@@ -1,4 +1,11 @@
 class OrdersController < ApplicationController
+    before_filter :requireLogin
+    
+    def requireLogin
+        if session[:user_id] == nil
+            redirect_to "/"
+        end
+    end
     
     def index
         @orders = Order.all
