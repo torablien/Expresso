@@ -10,7 +10,11 @@
 
 <header id="header">
 				<h1><a href="/">Expresso</a></h1>
-				<%= @currUserDisplay %>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+				<% if@isLoggedIn %>
+						<%= @currUserDisplay %>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+				<% else %>
+					<a href="/auth/facebook">Login</a
+				<% end %>
 				<a href="#nav">Menu</a>
 			</header>
 
