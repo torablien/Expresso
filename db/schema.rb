@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20151101235024) do
+ActiveRecord::Schema.define(version: 20151112224938) do
 
   create_table "orders", force: :cascade do |t|
     t.text     "content"
@@ -26,7 +26,25 @@ ActiveRecord::Schema.define(version: 20151101235024) do
     t.datetime "updated_at",                   null: false
   end
 
+  create_table "stores", force: :cascade do |t|
+    t.text "name"
+    t.text "description"
+    t.text "address"
+    t.text "url"
+  end
+
   create_table "users", force: :cascade do |t|
+<<<<<<< HEAD
+    t.string   "provider"
+    t.string   "uid"
+    t.string   "name"
+    t.string   "image"
+    t.string   "token"
+    t.string   "email"
+    t.string   "address"
+    t.boolean  "isDriver",   default: false
+    t.datetime "expires_at"
+=======
     t.text     "provider"
     t.text     "uid"
     t.text     "name"
@@ -37,6 +55,7 @@ ActiveRecord::Schema.define(version: 20151101235024) do
     t.text     "email"
     t.text     "address"
     t.boolean  "isDriver",   default: false
+>>>>>>> eda1b488f595cb1a0daa15ab14d2740ca1de2f2d
     t.datetime "created_at",                 null: false
     t.datetime "updated_at",                 null: false
   end

@@ -20,9 +20,8 @@
 									</thead>
         <% @users.each do |user| %>
               <tr>
-                <td class="userID"><%= user.id %></td>
+                <td class="userID"><%= user.uid %></td>
                 <td class="name"><%= user.name %></td>
-                <td class="username"><%= user.username %></td>
                 <td class="email"><%= user.email %></td>
                 <td class="address"><%= user.address %></td>
                 <td class="isDriver"><%= user.isDriver %></td>
@@ -30,7 +29,7 @@
               </tr>
         <% end %>
       </table>
-    <%= link_to "New User", "users/new",{ :class=>"button special"} %>
+    <%= link_to "Log in with Facebook", "/auth/facebook",{ :class=>"button special"} %>
   </div>
 </div>
 

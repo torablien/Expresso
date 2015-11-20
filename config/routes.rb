@@ -20,7 +20,10 @@ Rails.application.routes.draw do
   post 'login' => 'login#setCurrUserID'
   get 'auth/:provider/callback', to: 'sessions#create'
   get 'logout', to: 'sessions#destroy'
+<<<<<<< HEAD
+=======
   
+>>>>>>> eda1b488f595cb1a0daa15ab14d2740ca1de2f2d
 
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
