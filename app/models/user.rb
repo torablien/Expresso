@@ -10,7 +10,6 @@ class User < ActiveRecord::Base
               user.provider = auth.provider
               user.uid = auth.uid
               user.name = auth.info.name
-              user.first_name = auth.info.first_name
               user.image = auth.info.image
               user.email = auth.info.email
               user.token = auth.credentials.token
