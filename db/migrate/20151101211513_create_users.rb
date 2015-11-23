@@ -4,6 +4,7 @@ class CreateUsers < ActiveRecord::Migration
       t.text :provider
       t.text :uid
       t.text :name
+      t.text :first_name
       t.text :image
       t.text :token
       t.datetime :expires_at

@@ -1,12 +1,28 @@
 <!DOCTYPE html>
 <html>
-<head>
-  <title>Expresso - Coffee Delivery</title>
-  <meta charset="utf-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true %>
-  <%= csrf_meta_tags %>
-</head>
+	<body>
+		<style>
+		.circle{
+			width:100px;
+
+
+			height:100px;
+			border-radius:50% 50% 50% 50%;  
+
+
+		}
+		</style>
+	</body>
+</html>
+<html>
+	<head>
+	  <title>Expresso - Coffee Delivery</title>
+	  <meta charset="utf-8" />
+	  <meta name="viewport" content="width=device-width, initial-scale=1" />
+	  <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true %>
+	  <%= csrf_meta_tags %>
+	</head>
+
 	<body class="landing">
 
 		<!-- Header -->
@@ -33,10 +49,20 @@
 			</nav>
 
 		<!-- Banner -->
+		
 			<section id="banner">
-				<i class="icon fa-coffee"></i>
+        		
+				<% if not @isLoggedIn %>
+					<i class="icon fa-coffee"></i>
+				<% else %>
+					<%= image_tag "https://graph.facebook.com/v2.5/#{session[:user_uid]}/picture?type=large", :class => "circle" %>
+				<% end %>
 				<h2>Expresso</h2>
-				<p>Coffee is always a good idea</p>
+				<% if not @isLoggedIn %>
+					<p>Coffee is always a good idea</p>
+				<% else %>
+					<p>Hey <%=@currUserDisplay.split.last%>, need some Coffee?</p>
+				<% end %>
 				<ul class="actions">
 				<% if @isLoggedIn %>
 					<li><a href="/orders" class="button big">Order Now</a></li>
