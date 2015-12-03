@@ -1,3 +1,20 @@
+<html>
+  <style>
+      .input-small{
+        width: 200px;
+        margin-left: auto;
+        margin-right: auto;
+      }
+      .button-special{
+        margin-left: auto;
+        margin-right: auto;
+      }
+    </style>
+</html>
+
+
+
+<html>
 <div class="container">
     <br/>
     <h1>Login</h1>
@@ -17,13 +34,22 @@
 </div>
 
 <div class="login">
-  <div class="container">
-    <%= form_tag(controller: 'login', action: 'setCurrUserID') do %>
-        Username:
-        <%= text_field_tag :newCurrUserID %> <br/>
-        <%= submit_tag "Login", class: "button special" %>
-        <%= link_to "Register", "users/new",{ :class=>"button special"} %>
-    <% end %>
-  </div>
-</div>
-
+      <div class="container">
+        <%= form_tag(controller: 'login', action: 'setCurrUserID') do %>
+            Username:
+            <%= text_field_tag :newCurrUserID, nil, class: 'input-small',:id => "input-small"%> <br/>
+            <%= submit_tag "Login as Driver", class: "button special" %>
+            <%= link_to "Register as Driver", "/users/new",:class => "button special" %>
+        <% end %>
+        
+      </div>
+    </div>
+      <body>
+    <div class = "facebook">
+      <div class = "container">
+        <h2> Or </h2>
+        <%=link_to "Log in with Facebook", "/auth/facebook",{:class=>"button special"} %>
+      </div>
+    </div>
+  </body>
+</html>

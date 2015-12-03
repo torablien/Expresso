@@ -1,5 +1,10 @@
 class DriversPageController < ApplicationController
-    before_filter :requireLogin
+    before_filter :requireCustomer
+    def requireCustomer
+        if session[:user_id] == nil
+            redirect_to "/"
+        end
+    end
     
     def index
         @orders = Order.all

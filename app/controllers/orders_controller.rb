@@ -1,9 +1,11 @@
 class OrdersController < ApplicationController
-    before_filter :requireLogin
+    before_filter :requireCustomer
     
-    def requireLogin
+    def requireCustomer
         if session[:user_id] == nil
             redirect_to "/"
+        elsif User.find(session[:user_id]).isDriver
+            redirect_to "/drivers"
         end
     end
     

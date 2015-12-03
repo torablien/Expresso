@@ -26,6 +26,7 @@
 <html>
 	<head>
 	  <title>Expresso - Coffee Delivery</title>
+	  <link rel="shortcut icon" href ="icon fa-coffee" >
 	  <meta charset="utf-8" />
 	  <meta name="viewport" content="width=device-width, initial-scale=1" />
 	  <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true %>
@@ -47,12 +48,14 @@
 				<ul class="links">
 					<li><a href="/">Home</a></li>
 					<% if not @isLoggedIn %>
-					<li><a href="/auth/facebook">Login</a></li>
+					<li><a href="/login">Login</a></li>
 					<% else %>
 					<li><a href="/logout">logout</a></li>
 					<li><a href="/orders">Orders</a></li>
-					<li><a href="/users">Users</a></li>
-					<li><a href="/drivers">Drivers</a></li>
+					<li><a href="/users">Profile</a></li>
+						<% if User.find(session[:user_id]).isDriver %>
+							<li><a href="/drivers">Drivers</a></li>
+						<% end %>
 					<% end %>
 				</ul>
 			</nav>
@@ -63,18 +66,24 @@
         		
 				<% if not @isLoggedIn %>
 					<i class="icon fa-coffee"></i>
+				<% elsif User.find(session[:user_id]).isDriver %>
+					<i class="icon fa-car"></i>
 				<% else %>
 					<%= image_tag "https://graph.facebook.com/v2.5/#{session[:user_uid]}/picture?type=large", :class => "circle" %>
 				<% end %>
 				<h2>Expresso</h2>
 				<% if not @isLoggedIn %>
 					<p>Coffee is always a good idea</p>
+				<%elsif  User.find(session[:user_id]).isDriver%>
+					<p>Coffee is always a good idea</p>
 				<% else %>
 					<p>Hey <%=@currUserDisplay.split.last%>, need some Coffee?</p>
 				<% end %>
 				<ul class="actions">
-				<% if @isLoggedIn %>
+				<% if not User.find(session[:user_id]).isDriver%> %>
 					<li><a href="/orders" class="button big">Order Now</a></li>
+				<% elsif  User.find(session[:user_id]).isDriver %>
+					<li><a href = "/drivers" class = "button big" > Make Delivery</a></li>
 				<% else %>
 					<li><a href="/auth/facebook" class="button big">Login</a></li>
 				<% end %>
