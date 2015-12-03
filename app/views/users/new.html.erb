@@ -23,7 +23,7 @@
   <div class="container">
     <%= form_for(@user) do |f| %>
     	<div class="field">
-            <%= f.label :user, "Create a New User" %>
+            <%= f.label :user, "Become a Driver" %>
             Full Name:
             <%= f.text_field :name %> <br/>
             Username:
@@ -32,10 +32,6 @@
             <%= f.text_field :email %> <br/>
             Address:
             <%= f.text_field :address %> <br/>
-            Customer or Driver?:
-            <div class="select-wrapper">
-            <%= f.select :isDriver, [['Customer', false], ['Driver', true]] %>
-            </div>
     	</div>
     	<br>
     	<div class="actions">

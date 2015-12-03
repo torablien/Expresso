@@ -9,11 +9,16 @@ class UsersController < ApplicationController
     
     def create 
         @user = User.new(user_params) 
+        @user.isDriver = true
         if @user.save 
+            
             redirect_to '/users' 
         else 
             render 'new' 
         end 
+    end
+    def driver
+        User.isDriver
     end
     
     

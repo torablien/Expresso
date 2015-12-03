@@ -30,7 +30,6 @@ ActiveRecord::Schema.define(version: 20151101235024) do
     t.text     "provider"
     t.text     "uid"
     t.text     "name"
-    t.text     "first_name"
     t.text     "image"
     t.text     "token"
     t.datetime "expires_at"
