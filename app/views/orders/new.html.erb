@@ -33,10 +33,9 @@
                 <%= f.select :restaurant, [['Starbucks', 'http://www.starbucks.com/menu'], ['PJs Coffee', 'http://www.pjscoffee.com/beverages.php'], ['Cafe Du Monde', 'http://www.cafedumonde.com/coffee']] %>
               </div><br/> 
               Food and Drink:
-              <%= f.text_area :content %>
+              <%= f.text_area :content %><br/>
               Price:
               <%= f.text_field :price, :onkeyup => "sync(this)" %><br>
-              <br/>
       <script type="text/javascript">
       function sync(textbox)
       {
