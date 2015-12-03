@@ -34,11 +34,25 @@
               </div><br/> 
               Food and Drink:
               <%= f.text_area :content %>
+              Price:
+              <%= f.text_field :price, :onkeyup => "sync(this)" %><br>
               <br/>
+      <script type="text/javascript">
+      function sync(textbox)
+      {
+      var script = $('#stripe-script')[0];
+      script.dataset.amount = textbox.value*100;
+      }
+      </script>
     	</div>
     	<div class="actions">
     	  <input type="button" value="Go to Selected Menu" onclick="window.open(order_restaurant.options[order_restaurant.selectedIndex].value)">
-    	  <%= f.submit "Create Order" %>
+    	  <script src="https://checkout.stripe.com/checkout.js" class="stripe-button" 
+    	    id="stripe-script"
+          data-key="<%= Rails.configuration.stripe[:publishable_key] %>"
+          data-description="Your Expresso Order"
+          data-amount="500"
+          data-locale="auto"></script>
     	</div>
     <% end %>
   </div>

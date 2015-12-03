@@ -19,6 +19,7 @@ ActiveRecord::Schema.define(version: 20151101235024) do
     t.text     "location"
     t.text     "time"
     t.text     "restaurant"
+    t.text     "price"
     t.integer  "createdByID"
     t.integer  "acceptedByID", default: 0
     t.boolean  "isDone",       default: false

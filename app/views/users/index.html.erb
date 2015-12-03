@@ -47,8 +47,7 @@
         <%= link_to "New User", "users/new",{ :class=>"button special"} %>
       <% else %>
       <% if not User.find(session[:user_id]).isDriver%>
-        <%= image_tag "https://graph.facebook.com/v2.5/#{session[:user_uid]}/picture?type=large", :class => "circle" %>
-  		  <h1>Hey <%=@currUserDisplay.split.last%></h1>
+        <%= image_tag "https://graph.facebook.com/v2.5/#{session[:user_uid]}/picture?type=large", :class => "circle" %><br/>
   		<%else%>
   		  <i class="icon fa-car">
   		<%end%>
