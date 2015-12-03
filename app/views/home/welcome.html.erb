@@ -53,7 +53,7 @@
 					<li><a href="/logout">logout</a></li>
 					<li><a href="/orders">Orders</a></li>
 					<li><a href="/users">Profile</a></li>
-						<% if User.find(session[:user_id]).isDriver %>
+						<% if @isLoggedIn && User.find(session[:user_id]).isDriver %>
 							<li><a href="/drivers">Drivers</a></li>
 						<% end %>
 					<% end %>
@@ -80,12 +80,12 @@
 					<p>Hey <%=@currUserDisplay.split.last%>, need some Coffee?</p>
 				<% end %>
 				<ul class="actions">
-				<% if not User.find(session[:user_id]).isDriver%> %>
-					<li><a href="/orders" class="button big">Order Now</a></li>
-				<% elsif  User.find(session[:user_id]).isDriver %>
-					<li><a href = "/drivers" class = "button big" > Make Delivery</a></li>
-				<% else %>
+				<% if not @isLoggedIn %>
 					<li><a href="/auth/facebook" class="button big">Login</a></li>
+				<% elsif not User.find(session[:user_id]).isDriver%>
+					<li><a href="/orders" class="button big">Order Now</a></li>
+				<% else %>
+					<li><a href = "/drivers" class = "button big" > Make Delivery</a></li>
 				<% end %>
 				</ul>
 			</section>
