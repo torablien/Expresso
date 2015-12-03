@@ -26,6 +26,7 @@
 <html>
 	<head>
 	  <title>Expresso - Coffee Delivery</title>
+	  <link rel="shortcut icon" href ="icon fa-coffee" >
 	  <meta charset="utf-8" />
 	  <meta name="viewport" content="width=device-width, initial-scale=1" />
 	  <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true %>
@@ -47,7 +48,7 @@
 				<ul class="links">
 					<li><a href="/">Home</a></li>
 					<% if not @isLoggedIn %>
-					<li><a href="/auth/facebook">Login</a></li>
+					<li><a href="/login">Login</a></li>
 					<% else %>
 					<li><a href="/logout">logout</a></li>
 					<li><a href="/orders">Orders</a></li>
@@ -63,8 +64,10 @@
         		
 				<% if not @isLoggedIn %>
 					<i class="icon fa-coffee"></i>
-				<% else %>
+				<% elsif not session[:user_isDriver]%>
 					<%= image_tag "https://graph.facebook.com/v2.5/#{session[:user_uid]}/picture?type=large", :class => "circle" %>
+				<% else %>
+					<i class="icon fa-car"></i>
 				<% end %>
 				<h2>Expresso</h2>
 				<% if not @isLoggedIn %>
