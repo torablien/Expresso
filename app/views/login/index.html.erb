@@ -1,12 +1,15 @@
 <html>
-  <body>
-    <style>
-      .p{
+  <style>
+      .input-small{
+        width: 200px;
         margin-left: auto;
-		  	margin-right: auto;
+        margin-right: auto;
+      }
+      .button-special{
+        margin-left: auto;
+        margin-right: auto;
       }
     </style>
-  </body>
 </html>
 
 
@@ -30,13 +33,13 @@
 <% end %>
 </div>
 
-    <div class="login">
+<div class="login">
       <div class="container">
         <%= form_tag(controller: 'login', action: 'setCurrUserID') do %>
             Username:
-            <%= text_field_tag :newCurrUserID %> <br/>
+            <%= text_field_tag :newCurrUserID, nil, class: 'input-small',:id => "input-small"%> <br/>
             <%= submit_tag "Login as Driver", class: "button special" %>
-            <%= link_to "Register as Driver", "users/new",{ :class=>"button special"} %>
+            <%= link_to "Register as Driver", "/users/new",:class => "button special" %>
         <% end %>
         
       </div>
@@ -44,7 +47,7 @@
       <body>
     <div class = "facebook">
       <div class = "container">
-        <p> Or </p>
+        <h2> Or </h2>
         <%=link_to "Log in with Facebook", "/auth/facebook",{:class=>"button special"} %>
       </div>
     </div>

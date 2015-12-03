@@ -2,7 +2,7 @@ class CreateUsers < ActiveRecord::Migration
   def change
     create_table :users do |t|
       t.text :provider
-      t.text :uid
+      t.text :uid, default: -1
       t.text :name
       t.text :image
       t.text :token

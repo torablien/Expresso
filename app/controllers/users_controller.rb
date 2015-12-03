@@ -1,7 +1,9 @@
 class UsersController < ApplicationController
     def index
         @users = User.all
-    end
+        @orders = Order.all
+       
+   end
     
     def new
         @user = User.new
@@ -10,15 +12,11 @@ class UsersController < ApplicationController
     def create 
         @user = User.new(user_params) 
         @user.isDriver = true
-        if @user.save 
-            
-            redirect_to '/users' 
+        if @user.save
+            redirect_to "/login"
         else 
             render 'new' 
         end 
-    end
-    def driver
-        User.isDriver
     end
     
     

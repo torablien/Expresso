@@ -28,7 +28,7 @@ ActiveRecord::Schema.define(version: 20151101235024) do
 
   create_table "users", force: :cascade do |t|
     t.text     "provider"
-    t.text     "uid"
+    t.text     "uid",        default: "-1"
     t.text     "name"
     t.text     "image"
     t.text     "token"
