@@ -5,6 +5,7 @@ Rails.application.routes.draw do
   post 'orders' => 'orders#create'
   get '/orders/:id/edit' => 'orders#edit'
   patch '/orders/:id' => 'orders#update'
+  post '/orders/:id/cancel' => 'orders#cancel'
   resources :orders
   
   get '/drivers' => 'drivers_page#index'
