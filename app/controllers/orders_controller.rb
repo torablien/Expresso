@@ -47,7 +47,7 @@ class OrdersController < ApplicationController
     
     def update
         @currOrder = Order.find(params[:id])
-        if @currOrder.update_attributes(order_params)
+        if @currOrder.update_attributes(order_params) 
             if @currOrder.restaurant == "http://www.starbucks.com/menu"
                 @currOrder.restaurant = "Starbucks"
             end
@@ -69,7 +69,6 @@ class OrdersController < ApplicationController
         deleteThis.destroy
         redirect_to '/orders'
     end
-            
     
     private 
     def order_params 
