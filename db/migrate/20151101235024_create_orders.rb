@@ -7,6 +7,7 @@ class CreateOrders < ActiveRecord::Migration
       t.text :time
       t.text :restaurant
       t.text :price
+      t.string :charge
       t.integer :createdByID
       t.integer :acceptedByID, default: 0
       t.boolean :isDone, default: false
