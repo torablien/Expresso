@@ -71,6 +71,15 @@ class OrdersController < ApplicationController
         end
     end
     
+    def cancel
+        @currOrder = Order.find(params[:id])
+        refund = Stripe::Refund.create(
+            charge: @currOrder.charge
+        )
+        Order.update(@currOrder.id, :isDone => true, :acceptedByID => -99)
+        redirect_to '/orders' 
+    end
+    
     def destroy(deleteThis)
         #Order.find(params[:id]).destroy
         deleteThis.destroy
