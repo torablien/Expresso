@@ -45,7 +45,6 @@ class OrdersController < ApplicationController
             :description => "Charge for test@example.com"
         )
         @order.charge = c.id
-        puts "*********** CHARGE #{@order.charge} CREATED *************"
         if @order.save 
             redirect_to '/orders' 
         else 
@@ -69,7 +68,7 @@ class OrdersController < ApplicationController
             redirect_to '/orders' 
         else 
             render 'edit' 
-        end 
+        end
     end
     
     def destroy(deleteThis)
