@@ -36,10 +36,8 @@
     	</div>
     	<div class="actions">
     	  <input type="button" value="Go to Selected Menu" onclick="window.open(order_restaurant.options[order_restaurant.selectedIndex].value)">
-    	  <% if !(@currOrder.isDone || @currOrder.acceptedByID > 0) %>
     	  <%= f.submit "Update Order" %>
     	  <input type="button" value="Cancel Order" onclick="<% cancel_order %>;window.location = '/orders'">
-    	  <% end %>
     	</div>
     <% end %>
   </div>

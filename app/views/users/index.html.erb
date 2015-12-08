@@ -71,7 +71,9 @@
       		  <% @orders.each do |order| %>
               <% if (order.createdByID == session[:user_id] || session[:user_id] == -1) && order.isDone %>
                 <tr class=<%=
-                    if order.isDone
+                    if order.isDone && order.acceptedByID == -99
+                      "canceledOrderRow"
+                    elsif order.isDone  
                       "finishedOrderRow"
                     elsif order.acceptedByID > 0 
                       "acceptedOrderRow"
@@ -86,7 +88,9 @@
                       <td class="orderContents"><%= order.content %></td>
                       <td class="creationTime"><%= order.created_at.strftime("%I:%M %p on %m/%d/%Y") %></td>
                       
-                      <% if order.isDone %>
+                      <% if order.isDone && order.acceptedByID == -99 %>
+                        <td class="canceledOrderColumn">Canceled</td>
+                      <% elsif order.isDone %>
                         <td class="finishedOrderColumn">Completed</td>
                       <% elsif order.acceptedByID > 0 %>
                         <td class="acceptedOrderColumn">Accepted</td>
