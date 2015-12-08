@@ -38,6 +38,13 @@ class OrdersController < ApplicationController
         if @order.restaurant == "http://www.cafedumonde.com/coffee"
             @order.restaurant = "Cafe Du Monde"
         end
+        c = Stripe::Charge.create(
+            :amount => 400,
+            :currency => "usd",
+            :source => params[:stripeToken],
+            :description => "Charge for test@example.com"
+        )
+        @order.charge = c.id
         if @order.save 
             redirect_to '/orders' 
         else 
@@ -61,7 +68,7 @@ class OrdersController < ApplicationController
             redirect_to '/orders' 
         else 
             render 'edit' 
-        end 
+        end
     end
     
     def destroy(deleteThis)

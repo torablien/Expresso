@@ -37,6 +37,7 @@
     	<div class="actions">
     	  <input type="button" value="Go to Selected Menu" onclick="window.open(order_restaurant.options[order_restaurant.selectedIndex].value)">
     	  <%= f.submit "Update Order" %>
+    	  <input type="button" value="Cancel Order" onclick="<% cancel_order %>;window.location = '/orders'">
     	</div>
     <% end %>
   </div>
