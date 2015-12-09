@@ -19,6 +19,7 @@ class DriversPageController < ApplicationController
         if @workaround != nil
             @workaround.each do |x|
                  Order.update(x[0], :acceptedByID => session[:user_id])
+                 UserMailer.order_accepted(Order.find(x[0]).createdByID).deliver
             end
             redirect_to '/drivers/accept'
         else

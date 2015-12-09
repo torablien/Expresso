@@ -28,6 +28,8 @@ gem 'sdoc', '~> 0.4.0', group: :doc
 gem 'omniauth-facebook'
 # Stripe gem
 gem 'stripe'
+# gem install mail
+gem 'mail'
 # Use ActiveModel has_secure_password
 # gem 'bcrypt', '~> 3.1.7'
 
